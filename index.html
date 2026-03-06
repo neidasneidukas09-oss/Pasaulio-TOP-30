@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+<meta charset="UTF-8">
+<title>Pasaulio Top 30</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:#f5f5f5;
+}
+
+#introScreen{
+position:fixed;
+top:0;
+left:0;
+width:100vw;
+height:100vh;
+background:#111;
+color:white;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+z-index:9999;
+padding:20px;
+}
+
+#introScreen h1{
+font-size:50px;
+margin-bottom:30px;
+}
+
+#continueBtn{
+padding:15px 40px;
+font-size:22px;
+border:none;
+border-radius:15px;
+cursor:pointer;
+}
+
+header{
+background:#222;
+color:white;
+padding:25px;
+text-align:center;
+font-size:28px;
+}
+
+nav{
+display:flex;
+justify-content:center;
+gap:20px;
+background:#333;
+padding:15px;
+flex-wrap:wrap;
+}
+
+nav button{
+background:none;
+border:none;
+color:white;
+font-size:18px;
+cursor:pointer;
+}
+
+section{
+display:none;
+max-width:900px;
+margin:40px auto;
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 0 15px rgba(0,0,0,0.1);
+}
+
+section.active{
+display:block;
+}
+
+footer{
+text-align:center;
+padding:25px;
+background:#222;
+color:white;
+margin-top:40px;
+}
+</style>
+</head>
+
+<body>
+
+<div id="introScreen">
+<h1>🏠 Pasaulio Top 30</h1>
+<p>Sveiki atvykę į Pasaulio influenceriai svetainę. Čia rasite populiariausių DJ, šokėjų, vlogerių ir dainininkų sąrašus.</p>
+<button id="continueBtn" onclick="document.getElementById('introScreen').style.display='none'">Tęsti</button>
+</div>
+
+<header>
+Pasaulio Top 30
+</header>
+
+<nav>
+<button onclick="showSection('dj')">DJ Top 30</button>
+<button onclick="showSection('sokejai')">Šokėjai Top 30</button>
+<button onclick="showSection('influenceriai')">Influenceriai Top 30</button>
+<button onclick="showSection('vlogeriai')">Vlogeriai Top 30</button>
+<button onclick="showSection('dainininkai')">Dainininkai Top 30</button>
+<button onclick="showSection('dainos')">Populiariausios dainos</button>
+<button onclick="showSection('liaudies')">Lietuvių liaudies dainos</button>
+</nav>
+
+<section id="dj" class="active">
+<h2>🔥 DJ Top 30</h2>
+<p>Čia gali įrašyti DJ sąrašą (pvz. Jonas Nainys ir kt.).</p>
+</section>
+
+<section id="sokejai">
+<h2>💃 Šokėjai Top 30</h2>
+<p>Čia gali įrašyti šokėjų sąrašą.</p>
+</section>
+
+<section id="influenceriai">
+<h2>⭐ Influenceriai Top 30</h2>
+<p>Čia gali įrašyti influencerių sąrašą.</p>
+</section>
+
+<section id="vlogeriai">
+<h2>🎥 Vlogeriai Top 30</h2>
+<p>Čia gali įrašyti vlogerių sąrašą.</p>
+</section>
+
+<section id="dainininkai">
+<h2>🎵 Dainininkai Top 30</h2>
+<p>Čia gali įrašyti dainininkų sąrašą.</p>
+</section>
+
+<section id="dainos">
+<h2>🎧 Populiariausios dainos</h2>
+<ul>
+<li><a href="https://www.youtube.com" target="_blank">1. Daina</a></li>
+<li><a href="https://www.youtube.com" target="_blank">2. Daina</a></li>
+<li><a href="https://www.youtube.com" target="_blank">3. Daina</a></li>
+</ul>
+</section>
+
+<section id="liaudies">
+<h2>🎶 Lietuvių liaudies dainos</h2>
+<ul>
+<li><a href="https://www.youtube.com" target="_blank">1. Liaudies daina</a></li>
+<li><a href="https://www.youtube.com" target="_blank">2. Liaudies daina</a></li>
+<li><a href="https://www.youtube.com" target="_blank">3. Liaudies daina</a></li>
+</ul>
+</section>
+
+<footer>
+© 2026 Pasaulio Top 30
+</footer>
+
+<script>
+function showSection(id){
+document.querySelectorAll("section").forEach(sec=>sec.classList.remove("active"));
+document.getElementById(id).classList.add("active");
+}
+</script>
+
+</body>
+</html>
